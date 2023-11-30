@@ -1,12 +1,26 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\loginController;
 
 //PRÁCTICA 1 RUTAS CONTROLADOR
 
 Route::get('/sign/signin/{v1}/{v2}/{v3}/{v4}', [App\Http\Controllers\SignController::class, 'signIn']);
 Route::get('/sign/signup/{v1}/{v2}/{v3}', [App\Http\Controllers\SignController::class, 'signUp']);
+
+
+//PRÁCTICA 2 
+// Route::post('/login/professor',[App\Http\Controllers\loginController::class, 'professor']);
+// Route::post('/login/alumne',[App\Http\Controllers\loginController::class, 'alumne']);
+// Route::post('/login/centre',[App\Http\Controllers\loginController::class, 'centre']);
+
+Route::get('/errorAcces',[App\Http\Controllers\loginController::class, 'error']) ->name('errorAcces');
+Route::post('/login', [App\Http\Controllers\loginController::class, 'login']) -> middleware('LoginCheck');
+
+
+
+
+
 
 
 
@@ -45,3 +59,11 @@ Route::get('/mosta', function () {
 // });
 
 
+
+
+
+// Route::post('/login/professor', function(){
+//     $email = Request('email');
+//     return view('professor').with('titol_vista', $email);
+
+// });
