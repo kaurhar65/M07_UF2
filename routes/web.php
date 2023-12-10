@@ -17,8 +17,9 @@ Route::get('/sign/signup/{v1}/{v2}/{v3}', [App\Http\Controllers\SignController::
 Route::get('/errorAcces',[App\Http\Controllers\loginController::class, 'error']) ->name('errorAcces');
 Route::post('/login', [App\Http\Controllers\loginController::class, 'login']) -> middleware('LoginCheck');
 
-
-
+//PRÁCTICA 3 VISTES
+Route::get('/signin', [App\Http\Controllers\SignController::class, 'signInPractica3']);
+Route::get('/signup', [App\Http\Controllers\SignController::class, 'signUpPractica3']);
 
 
 
@@ -57,10 +58,6 @@ Route::get('/mosta', function () {
 //     return view('signUp') ->with('nomUsauari', 'valorDeLaVariable');
 //     //return view('signUp') ->with('nomUsauari', $var);
 // });
-
-
-
-
 
 // Route::post('/login/professor', function(){
 //     $email = Request('email');
