@@ -10,7 +10,7 @@
          l'etiqueta action i method s'utilitza per enviar les a dades al fitxer gestionDB a través del POST"
     -->
     <h1> Crea un usuari </h1>
-    <form action="gestionBD.php" method="post">
+    <form action="/mostrarInfo" method="post">
         <label for = "id"> Indica el teu id </label>
         <input type="text" name="id">
         <br>

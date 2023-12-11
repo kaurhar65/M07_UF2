@@ -6,6 +6,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1> Hello World</h1>    
+    <h1>Datos del usuario:</h1>
+    <p>Nom: {{$nom}}</p>
+    <p>Cognom: {{$cognom}}</p>
+    <p>Email: {{$email}}</p>
+    <a href="/signin">Iniciar sesion</a>
+</body>
+</html>
 </body>
 </html>

@@ -49,4 +49,16 @@ class loginController extends Controller
         return view('practica02.error');
     }
 
+    public function datosUser(){
+        $nom= request('nom');
+        $cognom = request('cognom');
+        $email= request('email');
+    
+        return view('practica03.mostrarInfo')->with([
+            'nom' => $nom,
+            'cognom' => $cognom,
+            'email' => $email,
+            ]);
+    }
+
 }
