@@ -18,8 +18,8 @@ Route::get('/errorAcces',[App\Http\Controllers\loginController::class, 'error'])
 Route::post('/login', [App\Http\Controllers\loginController::class, 'login']) -> middleware('LoginCheck');
 
 //PRÁCTICA 3 VISTES
-Route::get('/signin', [App\Http\Controllers\SignController::class, 'signInPractica3']);
-Route::get('/signup', [App\Http\Controllers\SignController::class, 'signUpPractica3']);
+Route::get('/signin', [App\Http\Controllers\SignController::class, 'signInPractica3'])->name('signin');
+Route::get('/signup', [App\Http\Controllers\SignController::class, 'signUpPractica3'])->name('signup');
 
 
 

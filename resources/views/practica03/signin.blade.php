@@ -10,7 +10,7 @@
 <body>
     <!-- Formulari per iniciar la sessió-->
     <h1> Iniciar sessió de l'usuari </h1>
-    <form action="validar.php" method="post">
+    <form action="/login" method="post">
         <div>
             <label for="email"> Email </label>
             <input type="email" name="email">

@@ -7,5 +7,6 @@
 </head>
 <body>
     <p> Benvinguts professor. El teu emails és {{$email}} </p>
+    <a href="/signin"> Tornar </a>
 </body>
 </html>

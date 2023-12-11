@@ -7,5 +7,6 @@
 </head>
 <body>
     <p>Benvingut alunme. El teu email és {{$email}}</p>
+    <a href="/signin"> Tornar </a>
 </body>
 </html>
