@@ -59,6 +59,8 @@ class loginController extends Controller
             'cognom' => $cognom,
             'email' => $email,
             ]);
+
+        
     }
 
 }
