@@ -2,12 +2,38 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Usuari;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
 
 
 class loginController extends Controller
 {
+
+    //------------Control Login práctica crud-----------------
+    public function loginCrud(){
+        $email=Request('email');
+        $password=Request('password');
+
+        $consulta = Usuari::where('email', $email)->where('password', $password)->first();
+
+        
+        if($consulta->rol == "professor"){
+            $lista_alumne = Usuari::where('rol', "estudiant") -> get();
+            return view('centre.profe')->with('listaAlumno' , $lista_alumne);
+        }
+        else if($consulta->rol == "admin"){
+            $lista_profe = Usuari::where('rol', "professor") -> get();
+            return view('centre.admin')->with('lista' , $lista_profe);
+        }else if($consulta->rol == "estudiant"){
+            return view('centre.alumne');
+        }
+        else{
+            return view('practica02.error');
+        }
+    }
+
+    //--------------------Páctica 3 -Login--------------
     public function login(){
         $email = Request('email');
         $password = Request('password');
@@ -62,5 +88,6 @@ class loginController extends Controller
 
         
     }
+
 
 }
