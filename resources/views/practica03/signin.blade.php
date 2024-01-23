@@ -15,8 +15,8 @@
             <input type="email" name="email">
         </div>
         <div>
-            <label for="contrasenya"> Contraseña </label>
-            <input type="password" name="contrasenya">
+            <label for="password"> Contraseña </label>
+            <input type="password" name="password">
         </div>
         <div>
             <input type="checkbox" id="remember" name="remember" value="remember">
@@ -25,7 +25,7 @@
         <input type="submit" value="Enviar ">
     </form>
     <!-- En el cas de que no tingui un compte es pot anar a aquest enllaç per crear un -->
-    <a href="/signup"> Crear Usuari</a>
+    <!-- <a href="/signup"> Crear Usuari</a> -->
 
 </body>
 

@@ -6,25 +6,24 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- El formulari per demanar les dades a l'usuari.
-         l'etiqueta action i method s'utilitza per enviar les a dades al fitxer gestionDB a través del POST"
-    -->
-    <h1> Crea un usuari </h1>
-    <form action="/mostrarInfo" method="post">
+    <h1>Edita l'usuari professor</h1>
+    <form action="{{route('prof.update',[$profe->id])}}" method="post">
+        @method('put')
+        @csrf
         <label for = "id"> Indica el teu id </label>
-        <input type="text" name="id">
+        <input type="text" name="id" value="{{$profe->id}}">
         <br>
         <label for = "nom"> Indica el teu nom </label>
-        <input type="text" name="nom">
+        <input type="text" name="nom" value="{{$profe->nom}}">
         <br>
         <label for = "cognoms"> Indica el teu cognom </label>
-        <input type="text" name="cognoms">
+        <input type="text" name="cognoms" value="{{$profe->cognoms}}">
         <br>
         <label for = "email"> Indica el teu email </label>
-        <input type="email" name="email">
+        <input type="email" name="email" value="{{$profe->email}}">
         <br>
         <label for = "password"> Indica el teu password </label>
-        <input type="password" name="password">        
+        <input type="password" name="password" value="{{$profe->password}}">        
         <br>
         <label for="rol"> Rol </label>
         <select name="rol">
@@ -33,7 +32,7 @@
         </select>
         <br>
         <label for="actiu"> Actiu? </label>
-        <input type="checkbox" name="actiu">
+        <input type="checkbox" name="actiu" value="{{ $profe->id ==1 ? 'checked' : ''}}">
         <br>            
         <input type="submit" value="Enviar">   
     </form> 
@@ -41,4 +40,3 @@
     
 </body>
 </html>
-
